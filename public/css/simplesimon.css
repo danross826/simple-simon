@@ -1,0 +1,21 @@
+.blocks{
+	height: 5em;
+}
+
+
+#test{
+	color: red;
+}
+
+#one{
+	background-color: red;
+}
+#two{
+	background-color: blue;
+}
+#three{
+	background-color: green;
+}
+#four{
+	background-color: yellow;
+}
