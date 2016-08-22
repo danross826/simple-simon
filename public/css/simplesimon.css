@@ -1,51 +1,64 @@
 body{
-	background-image: url('../img/avatarworldmap.jpg');
-	background-size: cover;
+    background-image: url('../img/avatarworldmap.jpg');
+    background-size: cover;
+}
+
+
+button{
+    position: relative;
+    left: 9em;
 }
 
 
 .blocks{
-	height: 200px;
-	width: 200px;
-	position: relative;
-	left: 125px;
-	top: 125px;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    left: 125px;
+    top: 125px;
 }
 
 
 #test{
-	color: red;
+    color: teal;
+    background-color: black;
+    text-align: center;
 }
 
 #one{
-	background-image: url('../img/water.png');
-	background-size: 200px 200px;
-	background-repeat: no-repeat;
-	max-width: 100%;
-	max-height: 100%;
-	overflow: hidden;
+    background-image: url('../img/water.png');
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
 }
-#two{	
-	background-image: url('../img/earth.png');
-	background-size: 200px 200px;
-	background-repeat: no-repeat;
-	max-width: 100%;
-	max-height: 100%;
-	overflow: hidden;
+#two{   
+    background-image: url('../img/earth.png');
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
 }
-#three{	
-	background-image: url('../img/fire.png');
-	background-size: 200px 200px;
-	background-repeat: no-repeat;
-	max-width: 100%;
-	max-height: 100%;
-	overflow: hidden;
+#three{ 
+    background-image: url('../img/fire.png');
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
 }
-#four{	
-	background-image: url('../img/air.png');
-	background-size: 200px 200px;
-	background-repeat: no-repeat;
-	max-width: 100%;
-	max-height: 100%;
-	overflow: hidden;
+#four{  
+    background-image: url('../img/air.png');
+    background-size: 200px 200px;
+    background-repeat: no-repeat;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+#round{
+    background-color: black;
+    color: teal;
+    text-align: center;
 }
