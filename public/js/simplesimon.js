@@ -32,9 +32,6 @@ $(document).ready(function(){
         $('#round').text('Round '+roundCounter);
     };
 
-
-
-
     // Plays audio when tiles are clicked
 
     var water = $("#water")[0];
@@ -65,24 +62,24 @@ $(document).ready(function(){
         $('#three').click(record);
         $('#four').click(record);
         var water = $("#water")[0];
-    $("#one").click(function() {
-        water.play();
-    })
+        $("#one").click(function() {
+            water.play();
+        })
 
-    earth = $("#earth")[0];
-    $("#two").click(function() {
-        earth.play();
-    })
+        earth = $("#earth")[0];
+        $("#two").click(function() {
+            earth.play();
+        })
 
-    fire = $("#fire")[0];
-    $("#three").click(function() {
-        fire.play();
-    })
+        fire = $("#fire")[0];
+        $("#three").click(function() {
+            fire.play();
+        })
 
-    air = $("#air")[0];
-    $("#four").click(function() {
-        air.play();
-    })
+        air = $("#air")[0];
+        $("#four").click(function() {
+            air.play();
+        })
     };
 
     // Clear function clears out sequence and counters
@@ -176,6 +173,7 @@ $(document).ready(function(){
 
 
     var start=function(){
+        enableTileClick();
         clear();
         roundChange();
         if (startCounter==0) {
@@ -208,8 +206,9 @@ $(document).ready(function(){
         roundChange();
     }
 
-    //Core game logic tracks tiles clicked and compares them to sequence, if player gets it wrong, they'll get an alert saying they lost and it will performs clear function
-    // Animations won't start until new round begins after pressing start button'
+    //Core game logic tracks tiles clicked and compares them to sequence, if player gets it wrong,
+    // they'll get an alert saying they lost and it will performs clear function
+    // Animations and sounds won't start until new round begins after pressing start button'
 
     var gameRunning=function(){
     if (numberClicked==sequence[i]) {
@@ -223,6 +222,7 @@ $(document).ready(function(){
         alert("You Lose!");
         clear();
         $('#round').text('Round '+roundCounter);
+        $('.blocks').off("click");
     };
     };
 
