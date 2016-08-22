@@ -20,9 +20,13 @@ button{
 
 
 #test{
-    color: teal;
-    background-color: black;
+    color: #F8FDED;
+    background-color: #9E793B;
     text-align: center;
+    font-family: "Comic Sans MS";
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
 }
 
 #one{
@@ -58,7 +62,11 @@ button{
     overflow: hidden;
 }
 #round{
-    background-color: black;
-    color: teal;
+    background-color: #9E793B;
+    color: #F8FDED;
     text-align: center;
+    font-family: "Comic Sans MS";
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
 }
