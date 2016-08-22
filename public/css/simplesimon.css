@@ -1,5 +1,15 @@
+body{
+	background-image: url('../img/avatarworldmap.jpg');
+	background-size: cover;
+}
+
+
 .blocks{
-	height: 5em;
+	height: 200px;
+	width: 200px;
+	position: relative;
+	left: 125px;
+	top: 125px;
 }
 
 
@@ -8,14 +18,34 @@
 }
 
 #one{
-	background-color: red;
+	background-image: url('../img/water.png');
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
 }
-#two{
-	background-color: blue;
+#two{	
+	background-image: url('../img/earth.png');
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
 }
-#three{
-	background-color: green;
+#three{	
+	background-image: url('../img/fire.png');
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
 }
-#four{
-	background-color: yellow;
+#four{	
+	background-image: url('../img/air.png');
+	background-size: 200px 200px;
+	background-repeat: no-repeat;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
 }

@@ -5,26 +5,36 @@
 var numberClicked='';
 
 // I need a variable for my sequence of numbers representing tiles to animate
-var sequence=[]
+var sequence=[];
 
-// I also need a sequence created by the user when they click
-
-var userSequence=[]
-
-// I also want a function to clear both sequences
 
 // This is my index variable which I will use throughout
-var i=0
+var i=0;
 
 // I need a separate index for my animations
 
-var lightI=0
+var lightI=0;
+
+// I'm creating a counter to keep the game from starting multiple times
+
+var startCounter=0;
+
+// I need a variable to count rounds, and I need it in a function that will increase it under certain circumstances and display it
+
+var roundCounter=0;
+
+var roundChange=function(){
+roundCounter++;
+$('#round').text('Round '+roundCounter);
+};
 
 // This is my clear function which I will use in multiple ways
 
 var clear=function(){
 	sequence=[];
-	userSequence=[];
+	roundCounter=0;
+	startCounter=0;
+	i=0;
 }
 
 // I need a function to convert numbers to strings of words representing numbers so I can grab with Jquery
@@ -61,23 +71,36 @@ var $tile=$('#'+tileNumber);
 
 // I'll need two animate functions, one to animate it first then another to change it back
 
-var animate=function($tile){
-	$tile.fadeTo(1500,.3)
-	return $tile;
+// var animate=function(tile){
+// 	$(tile).fadeTo(500,.3);
+// 	$(tile).fadeTo(500,1);
+// };
+
+var animate=function(tile){
+	if (tile==(#one)){
+		water.play()
+	}
+	if (tile==(#two)){
+		earth.play()
+	}
+	if (tile==(#three)){
+		fire.play()
+	}
+	if (tile==(#four)){
+		air.play()
+	}
+	$(tile).fadeTo(500,.3);
+	$(tile).fadeTo(500,1);
 };
 
-var animateTwo=function($tile){
-	$tile.fadeTo(2000,1)
-	return $tile;
-}
 
 var lightUp=function(){
-for (lightI = 0; lightI<= (sequence.length-1); lightI++) {
-		tileNumber=numConverter(sequence[i]);
-		$tile=$('#'+tileNumber);
-		animate($tile);
-		animateTwo($tile);
-
+for (lightI = 0; lightI<(sequence.length); lightI++) {
+		setTimeout(function(lightI){
+		tileNumber=numConverter(sequence[lightI]);
+		var tile=('#'+tileNumber);
+		animate(tile);
+		},1000*lightI,lightI);
 	};
 };
 
@@ -97,36 +120,65 @@ var randomNumber=function(){
 
 var start=function(){
 	clear();
+	if (startCounter==0) {
 	sequence.push(randomNumber());
 	lightUp();
+	startCounter++;
+	}
 }
+
+// This is to play sounds when tiles are clicked
+
+var water = $("#water")[0];
+$("#one").click(function() {
+    water.play();
+})
+
+var earth = $("#earth")[0];
+$("#two").click(function() {
+    earth.play();
+})
+
+var fire = $("#fire")[0];
+$("#three").click(function() {
+    fire.play();
+})
+
+var air = $("#air")[0];
+$("#four").click(function() {
+    air.play();
+})
+
 
 // Record id's of divs clicked they will become the numberClicked variable
 
 var record=function(){
+	if (startCounter!==0) {
 	var $div=$(this).attr('id');
 	$div=reverseNumConverter($div);
 	numberClicked=$div;
 	gameRunning();
+	animate(this);
+	};
 }
 
 // These functions will be the body of the game
 
 var newRound=function(){
 	i=0;
-	console.log('got to new round');
 	sequence.push(randomNumber());
 	lightUp();
+	roundChange();
 }
 
 
 var gameRunning=function(){
-	console.log(numberClicked);
 if (numberClicked==sequence[i]) {
-	i++
+	++i
 	if (i==sequence.length) {
+		setTimeout(function(){
 		newRound();
-		console.log('in the if statement')
+	},1500)
 	};
 }else if(numberClicked!=sequence[i]){
 	alert("You Lose!")
